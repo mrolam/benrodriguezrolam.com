@@ -90,14 +90,16 @@ p{margin:0 0 .8em}
 /* ---------- landing hummingbirds ---------- */
 .birds{position:absolute;inset:0;z-index:8;pointer-events:none}
 .bird{position:absolute;will-change:transform,opacity;
-  animation:zip 1.7s cubic-bezier(.16,.8,.24,1) var(--delay,.3s) both}
+  animation:zip 2.8s cubic-bezier(.16,.8,.24,1) var(--delay,.3s) both}
+.js .bird,.js .bird img{animation-play-state:paused}
+.js.birds-go .bird,.js.birds-go .bird img{animation-play-state:running}
 .bird img{width:100%;height:auto;transform-origin:50% 60%;
-  animation:flutter .09s ease-in-out calc(var(--delay,.3s)) 18 alternate,
-            hover 3.4s ease-in-out calc(var(--delay,.3s) + 1.7s) infinite}
-.bird--left{--delay:.35s;--fx:-60vw;--fy:90px;--fr:-14deg;left:max(8px,calc(50% - 640px + 14px));top:92px;width:clamp(86px,9.5vw,132px)}
-.bird--right{--delay:.7s;--fx:55vw;--fy:120px;--fr:12deg;right:max(8px,calc(50% - 640px + 24px));bottom:92px;width:clamp(110px,13vw,176px)}
+  animation:flutter .09s ease-in-out calc(var(--delay,.3s)) 32 alternate,
+            hover 3.4s ease-in-out calc(var(--delay,.3s) + 2.8s) infinite}
+.bird--left{--delay:.5s;--fx:-110vw;--fy:90px;--fr:-14deg;left:max(8px,calc(50% - 640px + 14px));top:92px;width:clamp(104px,9.5vw,132px)}
+.bird--right{--delay:1.2s;--fx:110vw;--fy:120px;--fr:12deg;right:max(8px,calc(50% - 640px + 24px));bottom:92px;width:clamp(110px,13vw,176px)}
 .bird--right img{animation-duration:.09s,3.9s}
-.bird--corner{--delay:1.05s;--fx:50vw;--fy:-10px;--fr:8deg;right:max(10px,calc(50% - 640px + 20px));top:118px;width:clamp(64px,6.5vw,92px)}
+.bird--corner{--delay:1.9s;--fx:105vw;--fy:160px;--fr:8deg;right:max(10px,calc(50% - 640px + 20px));top:118px;width:clamp(82px,6.5vw,92px)}
 .bird--corner img{animation-duration:.08s,3.1s}
 @keyframes zip{
   0%{opacity:0;transform:translate(var(--fx),var(--fy)) rotate(var(--fr)) scale(.8)}
@@ -295,7 +297,11 @@ h2{font-weight:700;font-size:clamp(1.45rem,2.4vw,1.9rem);letter-spacing:-.01em}
 /* ---------- reduced motion: static, finished state ---------- */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .bird,.bird img,.fade{animation:none!important}
+  .fade{animation:none!important}
+  /* gentle version: birds drift in softly and bob, no zipping */
+  .bird{animation:softIn 1.6s ease-out var(--delay,.3s) both!important;animation-play-state:running!important}
+  .bird img{animation:hover 4.5s ease-in-out 2s infinite!important}
+  @keyframes softIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   .js .reveal{opacity:1;transform:none;transition:none}
   .btn{transition:none}
 }

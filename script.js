@@ -13,6 +13,25 @@
   menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
+
+  // Start the landing hummingbirds only once the hero is painted, so they are not missed while images load.
+  (function () {
+    var root = document.documentElement, started = false;
+    function go() { if (started) return; started = true;
+      requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('birds-go'); }); }); }
+    var imgs = [].slice.call(document.querySelectorAll('.birds img, .hero img'));
+    var left = imgs.length;
+    if (!left) go();
+    imgs.forEach(function (im) {
+      if (im.complete) { if (--left <= 0) go(); }
+      else { im.addEventListener('load', function () { if (--left <= 0) go(); });
+             im.addEventListener('error', function () { if (--left <= 0) go(); }); }
+    });
+    setTimeout(go, 2500);
+    // Replay when returning to the page from the back/forward cache
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { root.classList.remove('birds-go'); started = false; setTimeout(go, 50); } });
+  })();
+
   // Scroll reveal (skipped for reduced motion or no IntersectionObserver)
   var els = [].slice.call(document.querySelectorAll('.reveal'));
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
