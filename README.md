@@ -8,3 +8,5 @@ Homepage for Ben Rodriguez Rolam. Plain HTML, CSS and JS with no build step. Ope
 - The landing hummingbirds are CSS animations. `prefers-reduced-motion` shows the static version.
 
 The inquiry form posts to FormSubmit (AJAX) and emails mitch@rolams.com. Still placeholders: speaker reel, sample testimonial, social links.
+
+Pages: `/` (home, with the "Two ways to book Ben" chooser), `/motivational/` (students, schools, youth and community groups) and `/professional/` (Latino employees, ERGs, sales kickoffs, leadership, training). Each has its own booking form with a hidden `track` field.
