@@ -203,7 +203,12 @@ h2{font-weight:700;font-size:clamp(1.45rem,2.4vw,1.9rem);letter-spacing:-.01em}
 .form textarea{resize:vertical;min-height:84px}
 .form input::placeholder,.form textarea::placeholder{color:#55585a}
 .form input:focus,.form textarea:focus{outline:3px solid var(--gold);outline-offset:1px}
-.form__note{grid-column:1/-1;margin:6px 0 0;font-weight:700;color:var(--gold);font-size:.95rem}
+.form__note{grid-column:1/-1;margin:6px 0 0;font-weight:700;color:var(--gold);font-size:.98rem}
+.form__note a{color:var(--cream);text-underline-offset:3px}
+.form .btn:disabled{opacity:.7;cursor:progress}
+.booking-mail a{font-weight:700;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.booking-mail a:hover{text-decoration-color:var(--pink-hot)}
+.foot__center .booking-mail{font-size:.98rem}
 
 /* footer */
 .foot{text-align:center;padding:0 var(--pad) 40px;position:relative;overflow:hidden}

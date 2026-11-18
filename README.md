@@ -7,4 +7,4 @@ Homepage for Ben Rodriguez Rolam. Plain HTML, CSS and JS with no build step. Ope
 - Fonts: Fraunces and DM Sans from Google Fonts
 - The landing hummingbirds are CSS animations. `prefers-reduced-motion` shows the static version.
 
-Still placeholders: booking contact, speaker reel, sample testimonial, social links, and the inquiry form (not connected to anything yet).
+The inquiry form posts to FormSubmit (AJAX) and emails mitch@rolams.com. Still placeholders: speaker reel, sample testimonial, social links.

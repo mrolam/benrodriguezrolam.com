@@ -178,14 +178,18 @@
       <div class="book__copy">
         <h3>Let's talk.</h3>
         <p>For keynotes, sales kickoffs, and leadership talks.</p>
-        <p>Booking contact — TBD</p>
+        <p class="booking-mail">Bookings: <a href="mailto:mitch@rolams.com">mitch@rolams.com</a></p>
       </div>
-      <form class="form" id="inquiry" novalidate>
-        <label><span class="sr">Name</span><input type="text" name="name" placeholder="Name" autocomplete="name"></label>
-        <label><span class="sr">Email</span><input type="email" name="email" placeholder="Email" autocomplete="email"></label>
-        <label><span class="sr">Event details</span><textarea name="details" rows="3" placeholder="Event details"></textarea></label>
+      <form class="form" id="inquiry" action="https://formsubmit.co/mitch@rolams.com" method="POST">
+        <label><span class="sr">Name</span><input type="text" name="name" placeholder="Name" autocomplete="name" required></label>
+        <label><span class="sr">Email</span><input type="email" name="email" placeholder="Email" autocomplete="email" required></label>
+        <label><span class="sr">Event details</span><textarea name="message" rows="3" placeholder="Event details"></textarea></label>
+        <input type="hidden" name="_subject" value="New speaking inquiry — benrodriguezrolam.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
         <button class="btn btn--ink" type="submit">Send inquiry</button>
-        <p class="form__note" id="form-note" role="status" aria-live="polite" hidden>The inquiry form isn't live yet. Booking contact — TBD.</p>
+        <p class="form__note" id="form-note" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </section>
@@ -198,8 +202,7 @@
     <div class="foot__center">
       <p class="foot__name">Ben Rodriguez Rolam</p>
       <p class="foot__tag">Pueblo Roots. Boardroom Results.</p>
-      <p>Booking contact — TBD</p>
-      <p>Icons only — no profile links yet.</p>
+      <p class="booking-mail">Bookings: <a href="mailto:mitch@rolams.com">mitch@rolams.com</a></p>
     </div>
     <img class="foot__bird foot__bird--r" src="assets/bird-dive.webp" alt="" width="560" height="407" loading="lazy">
   </div>
